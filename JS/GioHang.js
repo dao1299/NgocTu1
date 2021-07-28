@@ -1,8 +1,20 @@
 //ẩn cart hàng -> ẩn bằng thuộc tính style luôn cũng đc display:none:>
 //document.getElementById("showcart").style.display = "none";
 
-var giohang = new Array();
-                    
+// if  (localStorage.getItem(giohang)==null)
+//     {
+//         console.log("1")
+//         var giohang = new Array();
+
+//     }
+// else
+// {
+//    listSP=JSON.parse(localStorage.getItem(string))
+// } 
+var giohang=new Array();
+if (localStorage.getItem("giohang")!=null){
+    giohang=JSON.parse(localStorage.getItem("giohang"))
+}           
 function themvaogiohang(x){
     var sp = x.parentElement.children;
     var hinh = sp[0].children[0].src;
@@ -37,15 +49,13 @@ function themvaogiohang(x){
 
 
 function showmycart(){
-
     var ttgh = "";
     var tongtien = 0;
 
     for(let i=0; i<giohang.length; i++){
         var thanhtien = giohang[i][2] * giohang[i][3];
-        var thanhtien = dongia*soluong;
+        // var thanhtien = dongia*soluong;
         tongtien += thanhtien;
-
         ttgh += '<tr>'+
                     '<td>'+(i+1)+'</td>'+
                     '<td><img src="'+giohang[i][0]+'"></td>'+
@@ -81,8 +91,7 @@ function showmycart(){
                 '</td>'+
             '</tr>';
     document.getElementById("mycart").innerHTML = ttgh;
-
-
+    document.getElementById("contentTableCart").innerHTML = ttgh;
     showcountsp(sl);
 }
 
@@ -96,7 +105,6 @@ function showcountsp(sl){
 }
 
 function showcart(){
-
     var x = document.getElementById("showcart");
     if(x.style.display == "block"){
         x.style.display = "none";
@@ -104,6 +112,10 @@ function showcart(){
     else{
         x.style.display = "block";
     }
+    showmycart();
+}
+function showcart2(){
+    var x = document.getElementById("contentTableCart");
     showmycart();
 }
 
