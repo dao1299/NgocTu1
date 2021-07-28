@@ -93,7 +93,7 @@ function showmycart(){
                 '</td>'+
             '</tr>';
     document.getElementById("mycart").innerHTML = ttgh;
-    // document.getElementById("contentTableCart").innerHTML = ttgh;
+    document.getElementById("contentTableCart").innerHTML = ttgh;
     showcountsp(sl);
 }
 
