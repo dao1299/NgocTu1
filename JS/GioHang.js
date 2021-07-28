@@ -11,7 +11,7 @@
 // {
 //    listSP=JSON.parse(localStorage.getItem(string))
 // } 
-var slick1
+
 var giohang=new Array();
 if (localStorage.getItem("giohang")!=null){
     giohang=JSON.parse(localStorage.getItem("giohang"))
@@ -47,17 +47,20 @@ function themvaogiohang(x){
     //lưu sp lên localStorage
     //sessionStorage.setItem("giohang", JSON.stringify("giohang"));
     localStorage.setItem("giohang", JSON.stringify(giohang));
+    showmycart();
 }//done thêm
 
 
 function showmycart(){
     var ttgh = "";
     var tongtien = 0;
-
+    var sl = 0;
     for(let i=0; i<giohang.length; i++){
         var thanhtien = giohang[i][2] * giohang[i][3];
         // var thanhtien = dongia*soluong;
+        
         tongtien += thanhtien;
+        // console.log(tongtien)
         ttgh += '<tr>'+
                     '<td>'+(i+1)+'</td>'+
                     '<td><img src="'+giohang[i][0]+'"></td>'+
@@ -69,7 +72,7 @@ function showmycart(){
                     //
 
                     '<td>'+
-                        '<input onchange="updateSL_Gia()"; id="ipSL"; type="number" name="soluong" min=1 max=10 value="'+giohang[i][3]+'">'+
+                        '<input onchange="updateSL_Gia(this)"; id="ipSL"; type="number" name="soluong" min=1 max=10 value="'+giohang[i][3]+'">'+
                     '</td>'+
                     
                     '<td>'+
@@ -81,8 +84,9 @@ function showmycart(){
                     '</td>'+  
                 '</tr>';
 
-        var sl = 0;
-        sl = giohang[i][3];
+        
+        sl += giohang[i][3];
+        showcountsp();
     }
     ttgh += '<tr>'+
                 '<td style="border: 0px solid black" colspan="2"><b>Tổng hóa đơn:</b></td>'+
@@ -94,13 +98,15 @@ function showmycart(){
             '</tr>';
     document.getElementById("mycart").innerHTML = ttgh;
     document.getElementById("contentTableCart").innerHTML = ttgh;
-    showcountsp(sl);
+    // showcountsp();
 }
 
 function showcountsp(sl){
-    var sl =0;
-    for(let i = 0; i < giohang.length; i++){
-        sl += giohang[i][3];
+    if (sl==null){
+        var sl =0;
+        for(let i = 0; i < giohang.length; i++){
+            sl += giohang[i][3];
+        }    
     }
     document.getElementById("countsp").innerHTML = sl;
     
@@ -121,42 +127,18 @@ function showcart2(){
     showmycart();
 }
 
-// function updateOnMyCart(){
-//     var tongtien = 0;
-//     var ipsl= document.getElementById("ipSL");
-//     for(let i=0; i<giohang.length; i++){
 
-//         var gia = parseFloat(donGia.innerText);
-//         var ipsl = ipSL.value; // lấy giá trị trong thẻ input
-//         tongtien += (price * ipsl);
-        
-//         var sl = 0;
-//         sl = giohang[i][3];
-//     }
-//     document.getElementsById("tongTien").innerText = tongtien + 'VNĐ';
+function updateSL_Gia(x) {
+
+    giohang[parseInt(x.parentElement.parentElement.children[0].textContent)-1][3]=parseInt(x.value)
+
+    localStorage.setItem("giohang", JSON.stringify(giohang));
     
+    showmycart();
+  
+    showcountsp();
 
-//}
-// function updateSL_Gia() {
-
-//     for(let i=0; i<giohang.length; i++){
-//     var dgia = document.getElementById("donGia")
-//     var dg = parseInt(dgia.innerText);
-//     var ipsl = document.getElementById("ipSL");
-//     var sl = ipsl.value;
-    
-//     var thanhtien;
-//     var tongtien;
-
-    
-//         var sl = ipsl.value;
-//         thanhtien = sl * dg;
-//         tongtien += thanhtien;
-//     }
-//     document.getElementById("thanhTien").innerText = thanhtien;
-//     document.getElementById("tongTien").innerText = tongtien;
-
-// }
+}
 
 function deleteOne(x) {
 
@@ -180,6 +162,7 @@ function deleteAll() {
     giohang = [];
     localStorage.setItem("giohang", JSON.stringify(giohang));
     showmycart();
+    showcountsp();
 } //done
 
 function closeTab(){
