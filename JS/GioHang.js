@@ -11,6 +11,7 @@
 // {
 //    listSP=JSON.parse(localStorage.getItem(string))
 // } 
+var slick1
 var giohang=new Array();
 if (localStorage.getItem("giohang")!=null){
     giohang=JSON.parse(localStorage.getItem("giohang"))
@@ -92,7 +93,7 @@ function showmycart(){
                 '</td>'+
             '</tr>';
     document.getElementById("mycart").innerHTML = ttgh;
-    document.getElementById("contentTableCart").innerHTML = ttgh;
+    // document.getElementById("contentTableCart").innerHTML = ttgh;
     showcountsp(sl);
 }
 
@@ -158,21 +159,26 @@ function showcart2(){
 // }
 
 function deleteOne(x) {
+
     var tr = x.parentElement.parentElement;
-    var tensp = tr.children[1].innerText;
+    var tensp = tr.children[2].innerText;
     tr.remove();
+
     //xoa sp trong mang
     for(let i= 0; i < giohang.length; i++){
+            
          if(giohang[i][1] == tensp){
+
             giohang.splice(i, 1);
         }  
     }
+    localStorage.setItem("giohang", JSON.stringify(giohang));
     showmycart();
-     
 }
 
 function deleteAll() {
     giohang = [];
+    localStorage.setItem("giohang", JSON.stringify(giohang));
     showmycart();
 } //done
 
