@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>T&N Đăng ký</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/dangnhapdangky.css">
+     <link rel="shortcut icon" href="../HinhAnh/logotitle.ico">
+</head>
+<body>
+    <div id="content">
+        <div id="logo">
+            <img src="../HinhAnh/logo01.png">
+        </div>
+        <div id="formdn">
+            <form>
+                <h2>Đăng Ký</h2>
+                <br>
+                <span id="baoloi"></span>
+                <input type="text" name="" id="userDN" placeholder="Tên đăng ký"><br>
+                <input type="password" name="" id="passDN1" placeholder="Mật khẩu">
+                <br>
+                <input type="password" name="" id="passDN2" placeholder="Xác nhận lại mật khẩu">
+                <br>
+                <input id="dangnhap" type="button" name="" value="ĐĂNG KÝ" onclick="dang_ky()">
+                <p>Bạn đã có tài khoản? <a href="DangNhap.html">Đăng nhập</a></p>
+                <p><a href="Index.html" >Quay lại trang chủ</a></p>
+                
+            </form>
+           
+            <script type="text/javascript">
+                 function dang_ky(){
+                        var user=document.getElementById("userDN");
+                        var pass1=document.getElementById("passDN1");
+                        var pass2=document.getElementById("passDN2");
+                        if (user.value.length==0) {
+                            alert('Vui lòng điền tên đăng ký');
+                        }else if(pass1.value.length == 0){
+                            alert('Vui lòng điền mật khẩu');
+                        }else{ 
+                            if (pass1.value.length<8) {
+                                alert("Mật khẩu phải có ít nhất 8 ký tự");
+                            }else if (pass1.value!=pass2.value) {
+                                alert('Vui lòng nhập lại mật khẩu xác nhận');
+                            }else if (localStorage.getItem(user.value)==null) {
+
+                                    id=user.value;
+                                    pass=pass1.value;
+                                    localStorage.setItem(id,pass1.value);
+                                    alert("Đăng kí thành công");
+                                    location.href='DangNhap.html';
+                            }else{
+                                alert("Tài khoản này đã được đăng kí! ");
+                            }
+                        }
+                    }
+                    
+                    
+                </script>
+        </div>
+    </div>
+</body>
+</html>

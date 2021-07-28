@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>T&N Giới thiệu</title>
+	
+	<link rel="shortcut icon" href="../HinhAnh/logotitle.ico">
+	<link rel="stylesheet" type="text/css" href="../CSS/Style.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/GioHang.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<script type="text/javascript" src="../JS/GioHang.js"></script>
+
+	<script type="text/javascript">
+		var list= new Array();
+		var result;
+		list[0] = "../HinhAnh/b1.jpg";
+		list[1] = "../HinhAnh/b2.jpg";
+		list[2] = "../HinhAnh/b3.jpg";
+			
+		function changeImgBanner(){
+			i=Math.floor(Math.random()*list.length);
+			kq='<img src="'+list[i]+ '"style="width: 100%; height:100%; border-radius: 0px">';
+			document.getElementById("banner").innerHTML=kq;
+			setTimeout(changeImgBanner,2000);
+		}
+	</script>
+
+</head>
+<body onload="changeImgBanner()">
+	<div id="main">
+		<div id="head">
+			<div id="head-up">
+				<div id="loginlogout" style="margin-left: 910px;float: left;">
+					<a id="login" href="DangNhap.html">Đăng nhập</a>
+					<a id="logout" style="margin-left:10px;" href="Index.html" onclick="thoat()"></a>
+					<script>
+						if (localStorage.getItem("NameUser")!=null){
+							document.getElementById("login").innerHTML
+							=localStorage.getItem("NameUser");
+							document.getElementById('logout').innerHTML ='Đăng xuất';
+							function thoat(){
+								localStorage.removeItem("NameUser");
+								location.href="Index.html";
+							}
+						}	
+					</script>
+				</div>
+
+				<!--nút giỏ hàng-->
+				<button onclick="showcart()"; style="font-size:15px ;width: 100px; border-radius: 5px; margin-left: 30px;">
+					Giỏ Hàng<br>
+					<i class="fa fa-shopping-cart" style="font-size:20px;color:hotpink;"></i>
+					<span id="countsp" style="color:red;">0</span>
+				</button>
+
+				<!--start showcart-->
+				<div id="showcart"; style="display: none;">
+					<b><i>Danh sách sản phẩm trong giỏ hàng</i></b>
+					<hr>
+					<table style="border: 1px solid hotpink; width: 500px;min-height: 30px;">
+						<tr>
+							<th style="width: 12px">STT</th>
+							<th style="width: 70px">Sản phẩm</th>
+							<th style="width: 120px">Tên sp</th>
+							<th style="width: 90px">Đơn giá</th>
+							<th style="width: 90px">Số lượng</th>
+							<th style="width: 90px">Thành tiền</th>
+							<th style="width: 15px">Xóa</th>
+						</tr>
+						<tbody id="mycart">
+							
+						</tbody>
+					</table>
+
+					<div>
+						<a href="GioHang.html"><button style=" font-size: 15px; font-weight: bold; color: blueviolet; margin-top: 0px; float: left;"> << Thanh Toán</button></a>
+						<a onclick="closeTab()"><button style=" font-size: 15px; font-weight: bold; color: blueviolet; margin-top: 0px; float: right;">Đóng</button></a>
+					</div>
+				</div><!--end showcart-->
+			</div><!--end head up-->
+
+			<!--start menu-->
+			<nav>
+				<ul>
+					<li><a href="Index.html">Trang chủ</a></li>
+
+					<li><a href="">Thực đơn bánh</a>
+						<ul>
+							<li>
+								<a href="">Bánh Kem</a>
+								<ul>
+									<li>
+										<a href="BKTiecSN.html">Bánh tiệc, sinh nhật</a>
+									</li>
+									<li>
+										<a href="BKMini.html">Bánh kem mini</a>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<a href="BanhMy.html">Bánh Mỳ</a>
+							</li>
+						</ul>
+					</li>
+					<li><a href="LienHe.html">Liên hệ</a>
+					</li>
+					<a href="Index.html" class="gach-link">
+						<img src="../HinhAnh/logo2.png">
+					</a>
+					
+					<li><a href="ThanhToan.html">Thanh Toán</a></li>
+					<li><a href="GioiThieu.html">Giới Thiệu</a></li>
+					<li>
+						
+						<input type="text" name="" value="" placeholder="Bánh sinh nhật" class="textTimKiem">
+						<input type="submit" name="" value="Tìm kiếm">
+						
+					</li>
+				</ul>
+			</nav>
+
+		</div>	
+		<div id="head-link">
+			<div id="banner">
+				<img src="../HinhAnh/b1.jpg">
+			</div>
+		</div>
+
+		<div id="left">
+			<p>
+				<b style="font-size: 18px; margin-left: 10px">Danh mục</b>
+			</p>
+			<ul id="menudoc">
+				<li>
+					<a href="Index.html">Trang chủ</a>
+				</li>
+				<li><a href="ThucDonB.html">Thực đơn bánh</a>
+					<ul id="submenu">
+						<li><a href="BK.html">Bánh kem</a>
+							<ul id="submenu2">
+								<li><a href="BKTiecSN.html">Bánh tiệc sinh nhật</a></li>
+								<li><a href="BKMini.html">Bánh kem mini</a></li>
+							</ul>
+
+						</li>
+						<li><a href="BanhMy.html">Bánh mỳ</a></li>
+					</ul>
+
+
+				</li>
+				<li><a href="TTVKM.html">Tin tức và khuyến mãi</a></li>
+				<li><a href="GioiThieu.html">Giới thiệu</a></li>
+				<li><a href="LienHe.html">Liên hệ</a></li>	
+			</ul>
+		</div>
+		
+		<div id="content" style="height: 900px;margin-bottom: 800px;">
+			<p align='center' style="color: blue;font-size: 30px;font-family:monospace;">Giới thiệu về trang bánh kem T&N Bakery</p>
+			<p id="gt">Được nhiều người biết đến với các sản phẩm bánh kem tinh tế và ngon miệng, tiệm bánh kem T&N Bakery là một trong những tiệm bánh kế thừa tinh hoa của những dòng bánh cao cấp trên thị trường. Với từng sản phẩm bánh kem được trang trí đầy ngọt ngào, tinh tế với nhiều mẫu bánh kem đẹp, mức giá phải chăng tùy theo kích thước và yêu cầu của khách hàng.</p>
+			<center><img src="../HinhAnh/hinhnen002.jpg" width="800px" height="400px"></center>
+			<p><center>T&N Bakery hân hạnh được phục vụ quý khách</center></p>
+			<p id="gt">Đến với tiệm bánh T&N Bakery bạn có thể được tận hưởng dịch vụ chăm sóc khách hàng của chúng tôi một cách toàn diện nhất. Chúng tôi sẽ nhận làm và giao bánh đến tận nhà theo khung giờ yêu cầu của bạn, nhận tổ chức và set up tiệc sinh nhật, cung cấp dịch vụ quà tặng và các phụ kiện cần thiết đảm bảo bạn có một bữa tiệc hoành tráng cực kỳ ấn tượng.</p>
+			<p id="gt">Cửa hàng bánh kem T&N Bakery đa dạng sản phẩm với các loại bánh kem cao cấp như: bánh kem bắp, bánh kem tiramisu, bánh kem bông lan trứng muối, bánh kem fondant, bánh kem sinh nhật nhiều tầng… đặc biệt, chúng tôi còn cung cấp bánh kem cho các buổi tiệc thôi nôi, cưới hỏi, hội nghị sang trọng…</p>
+			<center>
+				<table id="tablegt">
+					<tr>
+						<td><img src="../HinhAnh/banh0001.jpg"></td>
+						<td><img src="../HinhAnh/banh10.jpg"></td>
+						<td><img src="../HinhAnh/banh14.jpg"></td>
+					</tr>
+					<tr>
+						<td><img src="../HinhAnh/banh2.jpg"></td>
+						<td><img src="../HinhAnh/banh4.jpg"></td>
+						<td><img src="../HinhAnh/banh6.jpg"></td>
+					</tr>
+					<tr>
+						<td><img src="../HinhAnh/banh7.jpg"></td>
+						<td><img src="../HinhAnh/banh8.jpg"></td>
+						<td><img src="../HinhAnh/banhmi2.jpg"></td>
+					</tr>
+					<tr>
+						<td><img src="../HinhAnh/banhmi6.jpg"></td>
+						<td><img src="../HinhAnh/mini1.jpg"></td>
+						<td><img src="../HinhAnh/mini2.jpg"></td>
+					</tr>
+				</table>
+			</center>
+			<center><p>Tham khảo một số mẫu bánh tại T&N Bakery</p></center>
+			<p id="gt">Với tiêu chí tạo nên những giá trị tuyệt vời cho quý khách hàng,T&N Bakery không chỉ chú trọng về chất lượng sản phẩm mà còn chú trọng về mặt thẩm mỹ. Từng công đoạn đều được kiểm định rõ ràng, khâu chuẩn bị nguyên liệu đảm bảo được chất lượng an toàn tuyệt đối. Nguồn trứng, bột, sữa phải được bảo quản trong môi trường đúng chuẩn quy định. Ngoài ra, đội ngũ Đầu Bếp Bánh chuyên nghiệp với phong cách làm việc sáng tạo, nhiệt huyết, tỉ mỉ trong từng thao tác như một nghệ sĩ chuyên nghiệp làm bạn hài lòng.</p>
+			<p id="gt">Bên cạnh đó, việc tạo nên những sản phẩm đạt chất lượng tốt, T&N Bakery còn mở ra với không gian tinh tế, ấn tượng với phong cách thiết kế hiện đại đậm nét phương Tâu. Nơi đây rất thích hợp để bạn lựa chọn làm nơi để sáng tạo với nguồn cảm hứng bất tận, hay lựa chọn làm nơi lắng đọng giữa những bộn bề cuộc sống để cùng thưởng thức những hương vị đẳng cấp của các loại bánh ngọt.</p>
+			<p id="gt">Hãy đến với T&N Bakery để được đáp ứng đầy đủ yêu cầu về mẫu mã sản phẩm, kích thước, dòng bánh với giá cả phải chăng nhất. Để lựa chọn mẫu bánh và đặt hàng hãy tham khảo thêm tại trang web của chúng tôi.</p>
+		</div>
+		
+
+
+		<div id="footer" >
+			<div class="GioiThieu">
+				<h3>Giới thiệu</h3>
+				<p>
+				 	<a href="Index.html" class="gach-link">
+						<img src="../HinhAnh/logo2.png" width="35%">
+					</a>
+					<br>
+				 	Tiệm bánh T&N Rainbow Bakery cung cấp các loại bánh kem, bánh mì hình ngộ nghĩnh, đẹp mắt và chất lượng ...
+				</p>
+			</div>
+			<div class="LienHe">
+				<h3>Liên hệ</h3>
+				<p>
+					Tiệm bánh ngọt T&N Rainbow Bakery
+					<br>Địa chỉ: ngõ 105 Doãn Kế Thiện, Cầu Giấy, Hà Nội.
+					<br>Email: luuanhtu09.st@gmail.com
+					<br>Hotline: 0869349985
+					<br>
+					Chi tiết liên hệ <a href="LienHe.html" >tại đây</a>
+				</p>
+			</div>
+			<div class= "DangKy">
+				<h3>Tạo tài khoản</h3>
+				<p>
+					Tạo tài khoản ngay để nhận thông tin của sản phầm và nhiều ưu đãi hấp dẫn
+					<br>
+					Đăng ký tài khoản <a href="DangKy.html">tại đây</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

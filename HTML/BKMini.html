@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<title>Bánh kem Mini - Tiệm bánh cầu vồng</title>
+	<link rel="shortcut icon" href="../HinhAnh/logotitle.ico">
+	<link rel="stylesheet" type="text/css" href="../CSS/Style.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/GioHang.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<script type="text/javascript" src="../JS/GioHang.js"></script>
+</head>
+<body>
+	<div id="main">
+		<div id="head">
+			<div id="head-up">
+				<div id="loginlogout" style="margin-left: 910px;float: left;">
+					<a id="login" href="DangNhap.html">Đăng nhập</a>
+					<a id="logout" style="margin-left:10px;" href="Index.html" onclick="thoat()"></a>
+					<script>
+						if (localStorage.getItem("NameUser")!=null){
+							document.getElementById("login").innerHTML
+							=localStorage.getItem("NameUser");
+							document.getElementById('logout').innerHTML ='Đăng xuất';
+							function thoat(){
+								localStorage.removeItem("NameUser");
+								location.href="Index.html";
+							}
+						}	
+					</script>
+				</div>
+
+				<!--nút giỏ hàng-->
+				<button onclick="showcart()"; style="font-size:15px ;width: 100px; border-radius: 5px; margin-left: 30px;">
+					Giỏ Hàng<br>
+					<i class="fa fa-shopping-cart" style="font-size:20px;color:hotpink;"></i>
+					<span id="countsp" style="color:red;">0</span>
+				</button>
+
+				<!--start showcart-->
+				<div id="showcart"; style="display: none;">
+					<b><i>Danh sách sản phẩm trong giỏ hàng</i></b>
+					<hr>
+					<table style="border: 1px solid hotpink; width: 500px;min-height: 30px;">
+						<tr>
+							<th style="width: 12px">STT</th>
+							<th style="width: 70px">Sản phẩm</th>
+							<th style="width: 120px">Tên sp</th>
+							<th style="width: 90px">Đơn giá</th>
+							<th style="width: 90px">Số lượng</th>
+							<th style="width: 90px">Thành tiền</th>
+							<th style="width: 15px">Xóa</th>
+						</tr>
+						<tbody id="mycart">
+							
+						</tbody>
+					</table>
+
+					<div>
+						<a href="GioHang.html"><button style=" font-size: 15px; font-weight: bold; color: blueviolet; margin-top: 0px; float: left;"> << Thanh Toán</button></a>
+						<a onclick="closeTab()"><button style=" font-size: 15px; font-weight: bold; color: blueviolet; margin-top: 0px; float: right;">Đóng</button></a>
+					</div>
+				</div><!--end showcart-->
+			</div><!--end head up-->
+
+			<!--start menu-->
+			<nav>
+				<ul>
+					<li><a href="Index.html">Trang chủ</a></li>
+
+					<li><a href="">Thực đơn bánh</a>
+						<ul>
+							<li>
+								<a href="">Bánh Kem</a>
+								<ul>
+									<li>
+										<a href="BKTiecSN.html">Bánh tiệc, sinh nhật</a>
+									</li>
+									<li>
+										<a href="BKMini.html">Bánh kem mini</a>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<a href="BanhMy.html">Bánh Mỳ</a>
+							</li>
+						</ul>
+					</li>
+					<li><a href="LienHe.html">Liên hệ</a>
+					</li>
+					<a href="Index.html" class="gach-link">
+						<img src="../HinhAnh/logo2.png">
+					</a>
+					
+					<li><a href="ThanhToan.html">Thanh Toán</a></li>
+					<li><a href="GioiThieu.html">Giới Thiệu</a></li>
+					<li>
+						
+						<input type="text" name="" value="" placeholder="Bánh sinh nhật" class="textTimKiem">
+						<input type="submit" name="" value="Tìm kiếm">
+						
+					</li>
+				</ul>
+			</nav>
+
+		</div>	
+		<div id="head-link-TD">
+			<p>
+				<a href="Index.html" class="gach-link">&nbsp;&nbsp;&nbsp;Trang chủ</a> / Bánh kem Mini
+			</p>
+
+		</div>
+
+		<div id="left">
+			<p>
+				<b style="font-size: 18px; margin-left: 10px">Danh mục</b>
+			</p>
+			<ul id="menudoc">
+				<li>
+					<a href="Index.html">Trang chủ</a>
+				</li>
+				<li><a href="ThucDonB.html">Thực đơn bánh</a>
+					<ul id="submenu">
+						<li><a href="BK.html">Bánh kem</a>
+							<ul id="submenu2">
+								<li><a href="BKTiecSN.html">Bánh tiệc sinh nhật</a></li>
+								<li><a href="BKMini.html">Bánh kem mini</a></li>
+							</ul>
+
+						</li>
+						<li><a href="BanhMy.html">Bánh mỳ</a></li>
+					</ul>
+
+
+				</li>
+				<li><a href="TTVKM.html">Tin tức và khuyến mãi</a></li>
+				<li><a href="GioiThieu.html">Giới thiệu</a></li>
+				<li><a href="LienHe.html">Liên hệ</a></li>	
+			</ul>
+		</div>
+
+		<div id="content">
+
+			<p class="tieude">
+			 	> Bánh kem Mini < 
+				<input class="btn" type="button" name="" value=" > " >
+				<input class="btn" type="button" name="" value=" > ">
+			</p> 
+			<div class="KhungSP">
+				<div class="KhungBanh">
+					<div class="KhungAnh">	
+						<img class="anh" src="../HinhAnh/hinhnen002.jpg">
+					</div>
+					<div class="KhungThongTin">
+						<a href="SanPhamBKMn1.html" class="gach-link">
+							<p class="tenbanh">Bánh kem happy mini (combo 4)</p>
+						</a>
+						
+						<p class="gia">40.000đ</p>
+						<input type="button" class="btnThem" name="" value="Thêm vào giỏ hàng">
+					</div>
+				</div>
+				<div class="KhungBanh">
+					<div class="KhungAnh">
+						<img class="anh" src="../HinhAnh/hinh004.jpg">
+					</div>
+					<div class="KhungThongTin">
+						<a href="SanPhamBKMn2.html" class="gach-link">
+							<p class="tenbanh">Bánh kem vương miện hồng mini</p>
+						</a>
+						
+						<p class="gia">25,000đ</p>
+						<input type="button" class="btnThem" name="" value="Thêm vào giỏ hàng">
+					</div>
+				</div>
+				<div class="KhungBanh">
+					<div class="KhungAnh">
+						<img class="anh" src="../HinhAnh/hinh003.jpg">
+					</div>
+					<div class="KhungThongTin">
+						<a href="SanPhamBKMn3.html" class="gach-link">
+							<p class="tenbanh">Bánh pudding xoài</p>
+						</a>
+						
+						<p class="gia">15,000đ</p>
+						<input type="button" class="btnThem" name="" value="Thêm vào giỏ hàng">
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="KhungSP">
+				<div class="KhungBanh">
+					<div class="KhungAnh">
+						<img class="anh" src="../HinhAnh/mini1.jpg">
+					</div>
+					<div class="KhungThongTin">
+						<a href="SanPhamBKMn2.html" class="gach-link">
+							<p class="tenbanh">Bánh kem happy Mini nến hồng</p>
+						</a>
+						
+						<p class="gia">25,000đ</p>
+						<input type="button" class="btnThem" name="" value="Thêm vào giỏ hàng">
+					</div>
+				</div>
+				<div class="KhungBanh">
+					<div class="KhungAnh">
+						<img class="anh" src="../HinhAnh/mini2.jpg">
+					</div>
+					<div class="KhungThongTin">
+						<a href="SanPhamBKMn1.html" class="gach-link">
+							<p class="tenbanh">Bánh kem vị cam mini</p>
+						</a>
+						
+						<p class="gia">18,000đ</p>
+						<input type="button" class="btnThem" name="" value="Thêm vào giỏ hàng">
+					</div>
+				</div>
+				<div class="KhungBanh">
+					<div class="KhungAnh">
+						<img class="anh" src="../HinhAnh/mini3.jpg">
+					</div>
+					<div class="KhungThongTin">
+						<a href="SanPhamBKMn1.html" class="gach-link">
+							<p class="tenbanh">Bánh pudding Cacao</p>
+						</a>
+						
+						<p class="gia">30,000đ</p>
+						<input type="button" class="btnThem" name="" value="Thêm vào giỏ hàng">
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div id="footer">
+			<div class="GioiThieu">
+				<h3>Giới thiệu</h3>
+				<p>
+				 	<a href="Index.html" class="gach-link">
+						<img src="../HinhAnh/logo2.png" width="35%">
+					</a>
+					<br>
+				 	Tiệm bánh T&N Rainbow Bakery cung cấp các loại bánh kem, bánh mì hình ngộ nghĩnh, đẹp mắt và chất lượng ...
+				</p>
+			</div>
+			<div class="LienHe">
+				<h3>Liên hệ</h3>
+				<p>
+					Tiệm bánh ngọt T&N Rainbow Bakery
+					<br>Địa chỉ: ngõ 105 Doãn Kế Thiện, Cầu Giấy, Hà Nội.
+					<br>Email: luuanhtu09.st@gmail.com
+					<br>Hotline: 0869349985
+					<br>
+					Chi tiết liên hệ <a href="LienHe.html" >tại đây</a>
+				</p>
+			</div>
+			<div class= "DangKy">
+				<h3>Tạo tài khoản</h3>
+				<p>
+					Tạo tài khoản ngay để nhận thông tin của sản phầm và nhiều ưu đãi hấp dẫn
+					<br>
+					Đăng ký tài khoản <a href="DangKy.html">tại đây</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+</html>

@@ -1,0 +1,55 @@
+#contentLH{
+	width: 900px;
+	height: 600px;
+	border: 0px solid #CDCDCD;
+	float:left;
+	margin-left: 5px;
+	margin-bottom: 70px;
+}
+
+.khungTTLH{
+	width: 270px;
+    height: 600px;
+    border: 1px solid pink;
+    background-color: white;
+    margin-bottom: 20px;
+    float:left;
+
+    font-size: 18px;
+    padding: 0px 10px;
+}
+#khungLH{
+	width: 600px;
+	height: 500px;
+	margin: 0px 30px;
+	background: white;
+	border: 1px solid #CDCDCD;
+	border-radius: 2px;
+	padding: 20px;
+	float: left;
+}
+/*ô text*/
+#oTD{
+	width: 600px;
+	height: 30px;
+
+}
+/*ô text tiêu đề*/
+#oTD-control{
+	width: 600px;
+	height: 200px;
+
+}
+/*ô submit ""gửi""*/
+#oGui{
+	width: 60px;
+	height: 30px;
+	background: pink;
+}
+#oGui:hover{
+	width: 65px;
+	height: 35px;
+	background: #FF69B4;
+
+}
+

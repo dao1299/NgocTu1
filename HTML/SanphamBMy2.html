@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sản phẩm - Tiệm bánh cầu vồng</title>
+	
+	<link rel="shortcut icon" href="../HinhAnh/logotitle.ico">
+	<link rel="stylesheet" type="text/css" href="../CSS/Style.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/TTSP.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/GioHang.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<script type="text/javascript" src="../JS/GioHang.js"></script>
+</head>
+<body>
+
+	<div id="main">
+		<div id="head">
+			<div id="head-up">
+				<div id="loginlogout" style="margin-left: 910px;float: left;">
+					<a id="login" href="DangNhap.html">Đăng nhập</a>
+					<a id="logout" style="margin-left:10px;" href="Index.html" onclick="thoat()"></a>
+					<script>
+						if (localStorage.getItem("NameUser")!=null){
+							document.getElementById("login").innerHTML
+							=localStorage.getItem("NameUser");
+							document.getElementById('logout').innerHTML ='Đăng xuất';
+							function thoat(){
+								localStorage.removeItem("NameUser");
+								location.href="Index.html";
+							}
+						}	
+					</script>
+				</div>
+
+				<!--nút giỏ hàng-->
+				<button onclick="showcart()"; style="font-size:15px ;width: 100px; border-radius: 5px; margin-left: 30px;">
+					Giỏ Hàng<br>
+					<i class="fa fa-shopping-cart" style="font-size:20px;color:hotpink;"></i>
+					<span id="countsp" style="color:red;">0</span>
+				</button>
+
+				<!--start showcart-->
+				<div id="showcart"; style="display: none;">
+					<b><i>Danh sách sản phẩm trong giỏ hàng</i></b>
+					<hr>
+					<table style="border: 1px solid hotpink; width: 500px;min-height: 30px;">
+						<tr>
+							<th style="width: 12px">STT</th>
+							<th style="width: 70px">Sản phẩm</th>
+							<th style="width: 120px">Tên sp</th>
+							<th style="width: 90px">Đơn giá</th>
+							<th style="width: 90px">Số lượng</th>
+							<th style="width: 90px">Thành tiền</th>
+							<th style="width: 15px">Xóa</th>
+						</tr>
+						<tbody id="mycart">
+							
+						</tbody>
+					</table>
+
+					<div>
+						<a href="GioHang.html"><button style=" font-size: 15px; font-weight: bold; color: blueviolet; margin-top: 0px; float: left;"> << Thanh Toán</button></a>
+						<a onclick="closeTab()"><button style=" font-size: 15px; font-weight: bold; color: blueviolet; margin-top: 0px; float: right;">Đóng</button></a>
+					</div>
+				</div><!--end showcart-->
+			</div><!--end head up-->
+
+			<!--start menu-->
+			<nav>
+				<ul>
+					<li><a href="Index.html">Trang chủ</a></li>
+
+					<li><a href="">Thực đơn bánh</a>
+						<ul>
+							<li>
+								<a href="">Bánh Kem</a>
+								<ul>
+									<li>
+										<a href="BKTiecSN.html">Bánh tiệc, sinh nhật</a>
+									</li>
+									<li>
+										<a href="BKMini.html">Bánh kem mini</a>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<a href="BanhMy.html">Bánh Mỳ</a>
+							</li>
+						</ul>
+					</li>
+					<li><a href="LienHe.html">Liên hệ</a>
+					</li>
+					<a href="Index.html" class="gach-link">
+						<img src="../HinhAnh/logo2.png">
+					</a>
+					
+					<li><a href="ThanhToan.html">Thanh Toán</a></li>
+					<li><a href="GioiThieu.html">Giới Thiệu</a></li>
+					<li>
+						
+						<input type="text" name="" value="" placeholder="Bánh sinh nhật" class="textTimKiem">
+						<input type="submit" name="" value="Tìm kiếm">
+						
+					</li>
+				</ul>
+			</nav>
+		</div>	
+		<div id="head-link-TD">
+			<p>
+				<a href="Index.html" class="gach-link">&nbsp;&nbsp;&nbsp; Trang chủ</a> / <a href="BKTiecSN.html" class="gach-link">Bánh kem tiệc, sinh nhật</a>
+
+			</p>
+		</div>
+
+
+		<div id="SP-left">
+			<img class="Anh-SP" src="../HinhAnh/banhmi2.jpg">
+		</div>
+
+		<div id="SP-content">
+			<b class="Ten">Bánh mỳ vừng</b>
+			<p class="Gia">Giá: 6,000đ</p>
+			<input type="button" class="btnThem" name="" value="Thêm vào giỏ hàng">
+			<p>Giới thiệu: Bánh mỳ vừng được phủ vừng bên ngoài, bên trong mềm ẩm thơm lừng mùi bơ phết.</p>
+			<p>Size: vừa</p>
+		</div>
+	</div>
+
+</body>
+</html>

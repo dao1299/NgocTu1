@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>T&N Đăng Nhập</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/dangnhapdangky.css">
+    <link rel="shortcut icon" href="../HinhAnh/logotitle.ico">
+</head>
+
+<body>
+    <div id="content">
+        <div id="logo">
+            <img src="../HinhAnh/logo01.png">
+        </div>
+        <div id="formdn">
+            <form id="login">
+                <h2>Đăng Nhập</h2>
+                <br>
+                <input id="userLogin" type="text" name="taikhoan" placeholder="Tên đăng nhập"><br>
+                <input id="passLogin" type="password" name="matkhau" placeholder="Mật khẩu">
+                <br>
+                
+                <input id="dangnhap" type="button" name="" value="ĐĂNG NHẬP" onclick="dang_nhap()">
+                <br>
+                <p>Bạn mới biết đến<font color="#00CC99"> T&N Bakery</font>?
+
+                 <a href="DangKy.html">Đăng ký</a></p>
+            </form>
+            <script type="text/javascript">
+
+                    function dang_nhap(){
+                        var user=document.getElementById("userLogin");
+                        var pass=document.getElementById("passLogin");
+                        if (user.value.length == 0) {
+                            alert('Vui lòng điền tên đăng nhập');
+                        }else if(pass.value.length == 0){
+                             alert('Vui lòng điền mật khẩu');
+                        }else{
+                            if (localStorage.getItem(user.value)==null){
+                            alert("Không có user này");
+                            }
+                            else{
+                                if (localStorage.getItem(user.value)==pass.value){
+                                     alert("Đăng nhập thành công");
+                                     location.href="Index.html";
+                                     localStorage.setItem("NameUser",user.value);
+                                }
+                                else{
+                                    alert("Sai mật khẩu! ");
+                                }
+                            }
+                        }
+                   }
+                </script>
+        </div>
+    </div>
+</body>
+</html>

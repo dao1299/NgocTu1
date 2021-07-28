@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width = device-width, initial-scale = 1.0">
+	<title>Thanh Toán- Tiệm bánh cầu vồng</title>
+	
+	<link rel="shortcut icon" href="../HinhAnh/logotitle.ico">
+
+	<link rel="stylesheet" type="text/css" href="../CSS/Style.css">
+	<link rel="stylesheet" type="text/css" href="../CSS/GioHang.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<script type="text/javascript" src="../JS/GioHang.js"></script>
+	
+</head>
+<body>
+	<div id="main">
+		<div id="head">
+			<div id="head-up">
+				<div id="loginlogout" style="margin-left: 910px;float: left;">
+					<a id="login" href="DangNhap.html">Đăng nhập</a>
+					<a id="logout" style="margin-left:10px;" href="Index.html" onclick="thoat()"></a>
+					<script>
+						if (localStorage.getItem("NameUser")!=null){
+							document.getElementById("login").innerHTML
+							=localStorage.getItem("NameUser");
+							document.getElementById('logout').innerHTML ='Đăng xuất';
+							function thoat(){
+								localStorage.removeItem("NameUser");
+								location.href="Index.html";
+							}
+						}	
+					</script>
+				</div>
+
+				<!--nút giỏ hàng-->
+				<button onclick="showcart()"; style="font-size:15px ;width: 100px; border-radius: 5px; margin-left: 30px;">
+					Giỏ Hàng<br>
+					<i class="fa fa-shopping-cart" style="font-size:20px;color:hotpink;"></i>
+					<span id="countsp" style="color:red;">0</span>
+				</button>
+
+				<!--start showcart-->
+				<div id="showcart"; style="display: none;">
+					<b><i>Danh sách sản phẩm trong giỏ hàng</i></b>
+					<hr>
+					<table style="border: 1px solid hotpink; width: 500px;min-height: 30px;">
+						<tr>
+							<th style="width: 12px">STT</th>
+							<th style="width: 70px">Sản phẩm</th>
+							<th style="width: 120px">Tên sp</th>
+							<th style="width: 90px">Đơn giá</th>
+							<th style="width: 90px">Số lượng</th>
+							<th style="width: 90px">Thành tiền</th>
+							<th style="width: 15px">Xóa</th>
+						</tr>
+						<tbody id="mycart">
+							
+						</tbody>
+					</table>
+
+					<div>
+						<a href="GioHang.html"><button style=" font-size: 15px; font-weight: bold; color: blueviolet; margin-top: 0px; float: left;"> << Thanh Toán</button></a>
+						<a onclick="closeTab()"><button style=" font-size: 15px; font-weight: bold; color: blueviolet; margin-top: 0px; float: right;">Đóng</button></a>
+					</div>
+				</div><!--end showcart-->
+			</div><!--end head up-->
+			
+			<!--start menu-->
+			<nav>
+				<ul>
+					<li><a href="Index.html">Trang chủ</a></li>
+
+					<li><a href="">Thực đơn bánh</a>
+						<ul>
+							<li>
+								<a href="">Bánh Kem</a>
+								<ul>
+									<li>
+										<a href="BKTiecSN.html">Bánh tiệc, sinh nhật</a>
+									</li>
+									<li>
+										<a href="BKMini.html">Bánh kem mini</a>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<a href="BanhMy.html">Bánh Mỳ</a>
+							</li>
+						</ul>
+					</li>
+					<li><a href="LienHe.html">Liên hệ</a>
+					</li>
+					<a href="Index.html" class="gach-link">
+						<img src="../HinhAnh/logo2.png">
+					</a>
+					
+					<li><a href="ThanhToan.html">Thanh Toán</a></li>
+					<li><a href="GioiThieu.html">Giới Thiệu</a></li>
+					<li>
+						
+						<input type="text" name="" value="" placeholder="Bánh sinh nhật" class="textTimKiem">
+						<input type="submit" name="" value="Tìm kiếm">
+						
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="head-link-TD">
+			<p><a href="Index.html" class="gach-link">&nbsp;&nbsp;&nbsp;Trang chủ</a> / Giỏ Hàng</p>
+		</div>
+
+		<!-- Noi dung gio hang va xac nhan dặt hàng-->
+		<div id="contentGH">
+
+		<!--Nhập thông tin-->
+			<div id="khungThanhtoan">
+				<h3>Nhập thông tin giao hàng để thanh toán</h3>
+				<form>
+					<table style="height: 300px; border: 2px solid pink;">
+						<tr>
+							<td><p>Họ tên* : </p></td>
+							<td>
+								<input type="text" name="" placeholder="Nhập tên" id="tenKH">
+							</td>
+						</tr>
+						<tr>
+							<td><p>SĐT* : </p></td>
+							<td>
+								<input type="tel" name="" placeholder="Nhập số điện thoại liên lạc" id="sdtGH">
+							</td>
+						</tr>
+						<tr>
+							<td><p>Địa chỉ* : </p></td>
+							<td>
+								<textarea  type="text" name="" placeholder="Nhập địa chỉ giao hàng" id="diachiGH"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td><p>Chú thích: </p></td>
+							<td>
+								<textarea id="thongdiepGH" type="text" name="thongdiep" value="" placeholder="Nhập chú thích/thông điệp/yêu cầu về sản phẩm"></textarea>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div><!--end-->
+
+			<!--Tthông tin hàng-->
+			<div id="khungTable">
+				<h3>Sản phẩm</h3>
+				<table style="border: 1px solid hotpink;">
+					<tr>
+						<th style="width: 12px">STT</th>
+						<th style="width: 70px; height: 20px;">Sản phẩm</th>
+						<th style="width: 120px">Tên sp</th>
+						<th style="width: 90px">Đơn giá</th>
+						<th style="width: 60px">Số lượng</th>
+						<th style="width: 90px">Thành tiền</th>
+					</tr>
+					<tbody id="mycart">
+							
+					</tbody>
+				</table>
+			</div><!--end-->
+
+			<hr>
+			<button type="button" id="xacNhan" onclick="xacNhan()">
+				<h4 style="margin-top: 9px;">Xác nhận đặt hàng</h4>
+			</button>
+
+		</div><!--end content-->
+
+
+		<div id="footer">
+			<div class="GioiThieu">
+				<h3>Giới thiệu</h3>
+				<p>
+				 	<a href="Index.html" class="gach-link">
+						<img src="../HinhAnh/logo2.png" width="35%">
+					</a>
+					<br>
+				 	Tiệm bánh T&N Rainbow Bakery cung cấp các loại bánh kem, bánh mì hình ngộ nghĩnh, đẹp mắt và chất lượng ...
+				</p>
+			</div>
+			<div class="LienHe">
+				<h3>Liên hệ</h3>
+				<p>
+					Tiệm bánh ngọt T&N Rainbow Bakery
+					<br>Địa chỉ: ngõ 105 Doãn Kế Thiện, Cầu Giấy, Hà Nội.
+					<br>Email: luuanhtu09.st@gmail.com
+					<br>Hotline: 0869349985
+					<br>
+					Chi tiết liên hệ <a href="LienHe.html" >tại đây</a>
+				</p>
+			</div>
+			<div class= "DangKy">
+				<h3>Tạo tài khoản</h3>
+				<p>
+					Tạo tài khoản ngay để nhận thông tin của sản phầm và nhiều ưu đãi hấp dẫn
+					<br>
+					Đăng ký tài khoản <a href="DangKy.html">tại đây</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

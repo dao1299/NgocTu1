@@ -1,0 +1,103 @@
+
+/*head-link: Phân vùng chứa các liên kết đầu trang*/
+/*headlink ở index chứa hình nền chạy của trang*/
+
+
+/*left: Phân vùng chứa các nội dung bên trái(VD:liên kết trái)*/
+/*left menu doc*/
+/*content: Phân vùng chứa các nội dung chính của trang*/
+
+/*footer: Phân vùng chứa các thông tin cuối trang (ở VD trên là thông tin về chủ sở hữu và các liên kết)*/
+
+#contentGH{
+	width: 1100px;
+	min-height: 800px;
+	border: 1px solid #CDCDCD;
+	float:left;
+	padding: 0 50px 50px 50px;
+}
+
+//
+#khungThanhtoan{
+	width: 800px;
+  height: 400px;
+  border: 2px solid pink;
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 25px;
+}
+#tenKH,
+#sdtGH{
+	width: 500px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+#diachiGH{
+	width: 500px;
+	height: 50px;
+	border-radius: 5px;
+}
+
+#thongdiepGH{
+	width: 500px;
+	height: 60px;
+	border-radius: 5px;
+}
+
+#xacNhan{
+	width: 150px;
+	height: 40px;
+	background-color: pink;
+	border-radius: 5px;
+}
+
+
+
+//
+
+#khungTable{
+	width: 800px;
+	min-height: 400px;
+	background: white;
+	border: 5px solid #CDCDCD;
+	border-radius: 2px;
+	padding: 20px;
+}
+#giohang{
+	position: fixed;
+  border: 3px inset blueviolet;
+  border-radius: 10px;
+  right: 20px;
+  top: 20px;
+  min-height: 60px;
+  background-color: lightblue;
+  padding: 10px;
+}
+
+table img{
+	width: 50px;
+	height: 40px;
+}
+th{
+	border: 2px solid hotpink;
+  text-align: center;
+  font-size: 13px;
+}
+td{
+  border: 1px solid grey;
+  text-align: center;
+  font-size: 13px;
+}
+.hanhdong:hover{
+	font-size: 15px;
+	color: black;
+}
+.hanhdong:hover{
+	font-size: 20px large;
+	color: red;
+}
+
+
+

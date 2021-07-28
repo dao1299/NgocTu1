@@ -1,0 +1,372 @@
+body{
+	font-family: Arial, Tahoma;
+	font-size: 16px;
+}
+/*main: phân vùng chứa toàn bộ nội dung của trang*/
+#main{
+	width: 1200px;
+	padding: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*head: Phân vùng chứa nội dung đầu tiên của trang(VD: phần logo + banner)*/
+#head{
+	height: 140px;
+	background-color: pink;
+	border: 1px solid #CDCDCD;
+	margin-bottom:5px;
+}
+#head-up{
+    height: 50px;
+    border: 0px solid #CDCDCD;
+    padding-top: 10px;
+}
+/*	/* manu da cap*/
+nav {
+   background-color: white;
+    margin-top:0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+
+}
+nav ul li a {
+    color: 	#FF6699;
+    font-style: bold;
+    text-decoration: none; /* bỏ dấu gạch chân ở link*/
+}
+
+nav img {
+    width: 14%;
+    margin-bottom: -16px;
+    /* margin: 0px 10px -40px; */
+    opacity: 0.85;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    /*position: relative;*/
+    text-transform: uppercase; /*chữ in hoa*/
+    margin-left: -5px;
+}
+
+nav>ul>li {
+    display: inline-block; /* 1 hàng*/
+
+}
+
+nav>ul>li>a {
+    display: block;
+    line-height: 45px;
+    padding: 0 25px;
+}
+
+a:hover {
+    color: 	#9932CC;
+}
+
+nav img:hover {
+    opacity: 0.5;
+}
+/*Menu các cấp*/
+
+nav ul ul {
+    width: 202px;
+    border-radius: 5px;
+    background-color: pink;
+    position: absolute;/*Hiển thị toàn bộ Menu đa cấp*/
+    visibility: hidden; /*ẩn dấu khi chạm vào vung menu ko thông qua hover cấp trc*/
+}
+
+nav ul ul li{
+    line-height:35px; /*chiều cao của tanh menub2,b3*/
+}
+
+nav ul ul li:hover {
+    background-color: #E6E6FA;
+    border-radius: 5px;
+}
+
+nav ul li:hover>ul {
+    visibility: visible;
+} /* hover vào ô <li> để hiện ra menu cấp sau*/
+
+nav ul ul ul{
+    top: 10%;
+    left: 99%;
+    
+} /* chỉnh cho ô menu cấp này sang vị trí trái phải trên dưới so với cấp trước*/
+
+nav ul li input{
+    color:  black;
+    background-color: pink;
+    border: 0px;
+    height: 23px;
+    border-radius: 4px;
+}
+
+/*Ô tìm kiếm*/
+.textTimKiem{
+    width: 140px;
+ }
+
+/*head-link: Phân vùng chứa các liên kết đầu trang*/
+/*headlink ở index chứa hình nền chạy của trang*/
+#head-link{
+	height: 500px;
+	border: 5px solid #00CCFF;
+	background-color: #F5F5F5;
+	margin-bottom:5px;
+	clear: both;
+}
+#banner{
+    width: 1190px;
+    height: 500px;
+}
+
+/*head link thực đơn tại các thang nằm trong mục thực đơn (khác inddexx)*/
+#head-link-TD{
+    height: 50px;
+    border: 1px solid #00CCFF;
+    background-color: white;
+    margin-bottom:10px;
+    clear: both;
+    color: #9932CC;
+}
+
+.gach-link{
+    text-decoration: none;
+}
+
+/*Slide dịch chuyển banner ở trang chủ*/
+
+
+/*left: Phân vùng chứa các nội dung bên trái(VD:liên kết trái)*/
+/*menu dọc*/
+#left{
+    width: 220px;
+    min-height: 260px;
+    border: 2px solid pink;
+    float:left;
+    background-color: pink;
+    margin-bottom: 20px;
+}
+#menudoc{
+    margin: 0px;
+    padding: 0px;
+    width: 220px;
+}
+#menudoc li:hover{
+   background-color: white;
+
+
+}
+#menudoc li{
+    list-style: none;
+    border: 1px inset white;
+
+}
+#menudoc li a{
+    margin-left: 5px;
+    display: block;
+    text-decoration: none;
+    line-height: 40px;
+
+}
+
+#menudoc #submenu{
+    position: absolute;
+    margin-left: 220px;
+    margin-top: -40px;
+    width: 130px;
+    background-color: pink;
+    padding: 0px;
+    display: none;
+}
+#menudoc li:hover #submenu{
+    display: block;
+}
+#menudoc #submenu #submenu2{
+    position: absolute;
+    margin-left: 125px;
+    margin-top: -40px;
+    background-color: pink;
+    width: 150px;
+    padding: 0px;
+    display: none;
+}
+#menudoc #submenu li:hover #submenu2{
+    display: block;
+}
+
+
+/*content: Phân vùng chứa các nội dung chính của trang*/
+#content{
+	width: 971px;
+	height: 1200px;
+	border: 0px solid #CDCDCD;
+	float:left;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.tieude{
+    padding-left: 30px; 
+    font-size: 20px;
+    color: #FF4500;
+    text-decoration: none;
+}
+
+.KhungSP{
+    width: 969px;
+    height: 350px;
+    border: 0px solid red;
+}
+.KhungBanh{
+    width: 300px;
+    height: 350px;
+    border: 1px solid pink;
+    margin-left: 20px;
+    float: left;
+    text-align: center;
+}
+.KhungAnh{
+    width: 300px;
+    height: 230px;
+    border: 0px solid green;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.anh{
+    width: 300px;
+    height: 230px;
+}
+.KhungThongTin{
+    text-align: center;
+    width: 300px;
+    min-height: 100px;
+    border: 0px solid pink;
+}
+
+.tenbanh{
+    font-size: 23px bold large;
+    color: palevioletred;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+}
+.gia{
+    font-size: 15px;
+    color: orange;
+    text-align: center;
+}
+.sl{
+    width: 34px;
+    height: 23px;
+    border: 1px solid pink;
+    border-radius:7px ;
+    background-color: #FFFFE0;
+}
+.btnThem{
+    width: 140px;
+    height: 30px;
+    background-color: #FFFFE0;
+    border-radius: 5px;
+    border: 1px solid pink;
+}
+.btnThem:hover{
+    background-color: white;
+    height: 30px;
+    border: 3px solid pink;
+}
+
+/*btn slide*/
+.btn{
+    width: 40px;
+    height: 25px;
+    border-radius: 10px;
+    background: pink;
+    border-color: #FFE4E1; 
+    margin-left: 10px;
+    font-size: 18px;
+    color: #00008B;
+    float: right;
+}
+.btn:hover{
+    background-color: white;
+    border-color: #FFE4E1; 
+}
+
+/*right: Phân vùng chứa các thông tin bên phải trang*/
+#right{
+    width: 240px;
+    min-height: 600px;
+    border: 1px solid #CDCDCD;
+    margin-bottom: 5px;
+    float:right;
+}
+/**/
+/*footer: Phân vùng chứa các thông tin cuối trang (ở VD trên là thông tin về chủ sở hữu và các liên kết)*/
+#footer{
+    width: 1200px;
+	height: 200px;
+	clear: both;
+	border: 1px solid #CDCDCD;
+	background-color: pink;
+}
+
+.GioiThieu {
+    width: 340px;
+    margin-left: 20px;
+    float: left;
+}
+.LienHe {
+    width: 380px;
+    margin-left: 30px;
+    float: left;
+}
+.DangKy{
+    width: 340px;
+    margin-left: 30px;
+    float: left;
+}
+
+#gt{
+    text-indent: 40px;
+    color: #777777 ;
+}
+#tablegt  img{
+    width: 200px;
+    height: 150px;
+}
+
+
+
+
+/*main: phân vùng chứa toàn bộ nội dung của trang*/
+/*head: Phân vùng chứa nội dung đầu tiên của trang(VD: phần logo + banner)*/
+
+
+
+/*head-link: Phân vùng chứa các liên kết đầu trang*/
+/*left: Phân vùng chứa các nội dung bên trái(VD:liên kết trái)*/
+/*content: Phân vùng chứa các nội dung chính của trang*/
+/*right: Phân vùng chứa các thông tin bên phải trang*/
+/**/
+/*footer: Phân vùng chứa các thông tin cuối trang (ở VD trên là thông tin về chủ sở hữu và các liên kết)*/
+
+#showcart{
+    position: fixed;
+    border: 3px inset blueviolet;
+    border-radius: 10px;
+    right: 50px;
+    top: 90px;
+    min-height: 60px;
+    background-color: lightblue;
+    padding: 10px;
+}
