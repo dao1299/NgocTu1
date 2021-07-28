@@ -16,6 +16,7 @@ if (localStorage.getItem("giohang")!=null){
     giohang=JSON.parse(localStorage.getItem("giohang"))
 }           
 function themvaogiohang(x){
+    console.log(x)
     var sp = x.parentElement.children;
     var hinh = sp[0].children[0].src;
     var tensp = sp[1].innerText;
